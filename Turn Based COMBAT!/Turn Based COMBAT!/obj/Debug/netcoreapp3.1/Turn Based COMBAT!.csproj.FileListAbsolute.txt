@@ -1,0 +1,13 @@
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\obj\Debug\netcoreapp3.1\Turn Based COMBAT!.csprojAssemblyReference.cache
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\obj\Debug\netcoreapp3.1\Turn Based COMBAT!.AssemblyInfoInputs.cache
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\obj\Debug\netcoreapp3.1\Turn Based COMBAT!.AssemblyInfo.cs
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\obj\Debug\netcoreapp3.1\Turn Based COMBAT!.csproj.CoreCompileInputs.cache
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\bin\Debug\netcoreapp3.1\Turn Based COMBAT!.exe
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\bin\Debug\netcoreapp3.1\Turn Based COMBAT!.deps.json
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\bin\Debug\netcoreapp3.1\Turn Based COMBAT!.runtimeconfig.json
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\bin\Debug\netcoreapp3.1\Turn Based COMBAT!.runtimeconfig.dev.json
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\bin\Debug\netcoreapp3.1\Turn Based COMBAT!.dll
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\bin\Debug\netcoreapp3.1\Turn Based COMBAT!.pdb
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\obj\Debug\netcoreapp3.1\Turn Based COMBAT!.dll
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\obj\Debug\netcoreapp3.1\Turn Based COMBAT!.pdb
+C:\Users\Devin\Desktop\Dev\TurnBasedCombat\Turn Based COMBAT!\Turn Based COMBAT!\obj\Debug\netcoreapp3.1\Turn Based COMBAT!.genruntimeconfig.cache
