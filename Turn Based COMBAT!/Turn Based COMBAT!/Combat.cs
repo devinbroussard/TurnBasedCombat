@@ -9,16 +9,13 @@ namespace Turn_Based_COMBAT_
             StrangeMan strangeman = new StrangeMan();
             Character character = new Character();
             strangeman.isturn = true;
-            int Round = 0; // sets the round variable
 
             Console.Clear();
             Utilities.writeRead($"You vs the Strange Man!");
 
 
-            while (character.IsAlive() || strangeman.IsAlive()) // ! is an logical negation operator that states the value of the boolean; || is a conditional logic operator, if one of the two booleans are true then it is true, until one is false
+            while (!character.IsAlive() || !strangeman.IsAlive()) // ! is an logical negation operator that states the value of the boolean; || is a conditional logic operator, if one of the two booleans are true then it is true, until one is false
             {
-                Round++;
-                Utilities.writeRead($"Round: {Round}");
                 if (strangeman.isturn)
                 {
                     Random rnd = new Random();
@@ -74,6 +71,8 @@ namespace Turn_Based_COMBAT_
                                 strangeman.hp -= character.attack * (100 - strangeman.defense) / 100;
                                 Console.WriteLine($"Hit for {character.attack * (100 - strangeman.defense) / 100} damage!");
                             }
+                            strangeman.isturn = true;
+                            character.isturn = false;
                             break;
 
                         case "2":
@@ -85,11 +84,11 @@ namespace Turn_Based_COMBAT_
                         case "examine":
                             Examine examine = new Examine();
                             examine.examineArea();
+                            strangeman.isturn = true;
+                            character.isturn = false;
                             break;
-
-
-
-
+                        case null:
+                            break;
                     }
                 }
 

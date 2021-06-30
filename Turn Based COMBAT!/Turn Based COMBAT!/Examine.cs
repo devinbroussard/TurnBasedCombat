@@ -10,7 +10,7 @@ namespace Turn_Based_COMBAT_
         {
             Character character = new Character();
             Random random = new Random();
-            float item = random.Next(2);
+            float item = random.Next(3);
 
             switch (item)
             {
