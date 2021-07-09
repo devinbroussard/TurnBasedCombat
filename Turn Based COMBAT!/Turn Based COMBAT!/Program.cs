@@ -4,12 +4,10 @@ namespace Turn_Based_COMBAT_
 {
     class Program
     { 
-        public static void Main(string[] args)
+        public static void Main()
         {
             Stages stages = new Stages();
-            stages.GameStart();
-            stages.FirstStage();
-
+            stages.startGame();
         }
     }
 }

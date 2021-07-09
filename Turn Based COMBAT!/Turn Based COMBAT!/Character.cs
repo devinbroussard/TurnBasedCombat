@@ -6,31 +6,20 @@ namespace Turn_Based_COMBAT_
 {
     class Character : BaseEntity
     {
+        public string name { get; set; }
+        public int attack { get; set; }
+        public int defense { get; set; }
+        public float hp { get; set; }
+        public bool active { get; set; }
 
-        private string _name = "";
-        public string Name { get => _name; set => _name = value; }
-        public Character(int Attack, int Defense, float Hp, bool isTurn)
+        public Character(string Name, int Attack, int Defense, float Hp, bool Active)
         {
             attack = Attack;
             defense = Defense;
             hp = Hp;
-            isturn = isTurn;
-
+            active = Active;
+            name = Name;
         }
-
-        public Character()
-        {
-            attack = 20;
-            defense = 10;
-            hp = 100;
-            isturn = false;
-
-        }
-
-        public int attack { get; set; }
-        public int defense { get; set; }
-        public float hp { get; set; }
-        public bool isturn { get; set; }
 
         public bool IsAlive()
         {
@@ -38,6 +27,16 @@ namespace Turn_Based_COMBAT_
                 return true;
             else
                 return false;
+        }
+
+        public void fight(BaseEntity otherEntity)
+        {
+            Utilities.writeRead($"{name}'s turn, fighting {otherEntity.name}!");
+            Console.WriteLine($"{name} attack {otherEntity.name}!");
+            otherEntity.hp -= attack * (100 - otherEntity.defense) / 100;
+            Console.WriteLine($"Hit for {attack * (100 - otherEntity.defense) / 100}");
+            if (otherEntity.hp < 0) otherEntity.hp = 0;
+            Utilities.writeRead($"{otherEntity.name}'s Hp: {otherEntity.hp}.");
         }
     }
 }

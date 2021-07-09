@@ -4,42 +4,66 @@ namespace Turn_Based_COMBAT_
 {
     class Stages
     {
-        public void GameStart()
+        public string CurrentStage;
+        public Character character;
+        public StrangeMan strangeman;
+        public Stages()
         {
-            Character character = new Character();
-            Console.WriteLine("This is the beginning of a text-based adventure game.");
-            Console.WriteLine("What is your name?");
-            character.Name = Console.ReadLine();
-            Console.WriteLine($"Okay, {character.Name}, press enter to start your adventure.");
-            Console.ReadLine();
+            strangeman = new StrangeMan(40, 10, 100, true);
+            character = new Character("", 60, 10, 100, false);
         }
 
-        public void FirstStage()
+        public void GameOver()
         {
-            Combat combat = new Combat();
-            string choice;
-            Console.WriteLine("You awaken in a forest. The sun is setting, you are thirsty, and it is getting dark. What do you do?");
-            Console.WriteLine("1. seek out help");
-            Console.WriteLine("2. look for water");
-            Console.WriteLine("3. build a shelter");
-            Console.Write("Choice: ");
-            choice = Console.ReadLine().ToLower();
-            Console.Clear();
-
-            switch (choice)
+            string gameoverChoice;
+            Utilities.writeRead("Game Over!");
+            Console.WriteLine("Press enter to give up, or write'restart' to try again!");
+            gameoverChoice = Console.ReadLine().ToLower();
+            if (!(gameoverChoice == "restart"))
             {
-                case "1":
-                case "seek out help":
-                case "seek":
-                    Console.WriteLine("You walk down the forest path seeking out help.");
-                    Utilities.writeRead("You shout for help and your voice echoes through the area.");
-                    Console.WriteLine("Eventually you reach a wall created by a cliffside.");
-                    Utilities.writeRead("Birds fly over head and wild animal noises surround you.");
-                    Console.WriteLine("A strange-looking man appears through the bushes.");
-                    Utilities.writeRead("He yells at you in a strange language, and then charges you.");
-                    Utilities.writeRead("There is no escape, you must defend yourself.");
-                    combat.StrangeManFight();
-                    break;
+                Program.Main();
+            }
+            else
+            {
+
+            }
+        }
+
+        public void startGame()
+        {
+            Console.WriteLine("What is your name?");
+            character.name = Console.ReadLine();
+            Utilities.writeRead($"Okay, {character.name}, press enter to begin!");
+
+            //always grab the active entities turn
+            //call fight on them
+            //grab unactive entity and fight them
+            //set the active to nonactive, and nonactive to active
+            //do this on loop until someone is dead
+            while (strangeman.IsAlive() && character.IsAlive())
+            {
+                if (strangeman.active)
+                {
+                    strangeman.fight(character);
+                    strangeman.active = false;
+                    character.active = true;
+                }
+
+                if (character.active)
+                {
+                    character.fight(strangeman);
+                    character.active = false;
+                    strangeman.active = true;
+                }
+            }
+
+            if (strangeman.IsAlive())
+            {
+                Utilities.writeRead($"{strangeman.name} won!");
+            }  
+            if (character.IsAlive())
+            {
+                Utilities.writeRead($"{character.name} won!");
             }
         }
     }
